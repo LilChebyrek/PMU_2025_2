@@ -43,7 +43,7 @@ import java.time.Instant
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppTabs(modifier: Modifier = Modifier) {
+fun DropTabs(modifier: Modifier = Modifier) {
     var selectedTabIndex by remember { mutableStateOf(0) }
     val tabs = listOf("Регистрация", "Правила", "Авторы", "Настройки")
 
@@ -111,12 +111,12 @@ fun AuthorsTab() {
     val authors = remember {
         listOf(
             Author(
-                "ФИО",
-                ""
+                "Нарзиев Тимур",
+                "https://sun9-43.userapi.com/s/v1/ig2/Bh89r5X4VzZxjS9sPNmucjZzTIXJS_dxTfgUZy83a51c71y49G7_yrToV_uTO-HxWEFXCom33JktGsYAl80nTaJd.jpg?quality=95&as=32x56,48x85,72x127,108x191,160x282,240x423,331x584&from=bu&cs=331x0"
             ),
             Author(
-                "ФИО",
-                ""
+                "Гончар Алексей",
+                "https://sun9-34.userapi.com/s/v1/ig2/-p8HkoUkYcwdQkv_hlFOftxLtFUsEnpnnEIrAfHZM_CZ4IRqoEVzCZ-pGvzUteFkgo7W-SB0oInkVlk5mgJX2reh.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,960x1280&from=bu&cs=960x0"
             )
         )
     }
@@ -155,10 +155,10 @@ data class Author(val name: String, val photoUrl: String)
 
 @Composable
 fun SettingsTab() {
-    var gameSpeed by remember { mutableFloatStateOf(1f) } // e.g., 0.5 to 2.0
+    var gameSpeed by remember { mutableFloatStateOf(1f) }
     var maxBugs by remember { mutableStateOf("5") }
-    var bonusInterval by remember { mutableStateOf("10") } // seconds
-    var roundDuration by remember { mutableStateOf("60") } // seconds
+    var bonusInterval by remember { mutableStateOf("10") }
+    var roundDuration by remember { mutableStateOf("60") }
 
     Column(
         modifier = Modifier
